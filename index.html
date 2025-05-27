@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>シンプル投票システム</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>シンプル投票システム</h1>
+        
+        <div id="vote-section">
+            <h2>投票</h2>
+            <div id="vote-options">
+                <div class="vote-option">
+                    <h3>選択肢1</h3>
+                    <button class="vote-btn" data-option="1">投票</button>
+                    <span class="vote-count">0</span>
+                </div>
+                <div class="vote-option">
+                    <h3>選択肢2</h3>
+                    <button class="vote-btn" data-option="2">投票</button>
+                    <span class="vote-count">0</span>
+                </div>
+                <div class="vote-option">
+                    <h3>選択肢3</h3>
+                    <button class="vote-btn" data-option="3">投票</button>
+                    <span class="vote-count">0</span>
+                </div>
+            </div>
+            <div class="chart-container">
+                <canvas id="voteChart"></canvas>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-database-compat.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="app.js"></script>
+</body>
+</html> 
