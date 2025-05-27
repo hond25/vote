@@ -125,7 +125,7 @@ button:hover {
 
 .vote-option:nth-child(3) .vote-btn {
     background-color: #ffce56;
-    color: #333;
+    /* color: #333; */
 }
 
 .vote-option:nth-child(3) .vote-btn:hover {
