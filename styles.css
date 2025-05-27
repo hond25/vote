@@ -98,4 +98,29 @@ button:hover {
 #voteChart {
     width: 100% !important;
     height: 300px !important;
+}
+
+.vote-counts {
+    margin-top: 2rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+}
+
+.vote-count-item {
+    background-color: #f9f9f9;
+    padding: 1rem;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.vote-count-item h3 {
+    margin-bottom: 0.5rem;
+    color: #333;
+}
+
+.vote-count-item .vote-count {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #2196F3;
 } 

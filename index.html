@@ -10,27 +10,44 @@
     <div class="container">
         <h1>シンプル投票システム</h1>
         
+        <!-- 投票画面 -->
         <div id="vote-section">
             <h2>投票</h2>
             <div id="vote-options">
                 <div class="vote-option">
                     <h3>選択肢1</h3>
                     <button class="vote-btn" data-option="1">投票</button>
-                    <span class="vote-count">0</span>
                 </div>
                 <div class="vote-option">
                     <h3>選択肢2</h3>
                     <button class="vote-btn" data-option="2">投票</button>
-                    <span class="vote-count">0</span>
                 </div>
                 <div class="vote-option">
                     <h3>選択肢3</h3>
                     <button class="vote-btn" data-option="3">投票</button>
-                    <span class="vote-count">0</span>
                 </div>
             </div>
+        </div>
+
+        <!-- 結果画面 -->
+        <div id="result-section" style="display: none;">
+            <h2>投票結果</h2>
             <div class="chart-container">
                 <canvas id="voteChart"></canvas>
+            </div>
+            <div class="vote-counts">
+                <div class="vote-count-item">
+                    <h3>選択肢1</h3>
+                    <span class="vote-count">0</span>
+                </div>
+                <div class="vote-count-item">
+                    <h3>選択肢2</h3>
+                    <span class="vote-count">0</span>
+                </div>
+                <div class="vote-count-item">
+                    <h3>選択肢3</h3>
+                    <span class="vote-count">0</span>
+                </div>
             </div>
         </div>
     </div>

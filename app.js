@@ -8,6 +8,8 @@ const firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 
 // DOM要素
+const voteSection = document.getElementById('vote-section');
+const resultSection = document.getElementById('result-section');
 const voteButtons = document.querySelectorAll('.vote-btn');
 const voteCounts = document.querySelectorAll('.vote-count');
 
@@ -88,6 +90,10 @@ voteButtons.forEach((button) => {
         // 投票数を増やす
         votesRef.transaction((count) => {
             return (count || 0) + 1;
+        }).then(() => {
+            // 投票後に結果画面に遷移
+            voteSection.style.display = 'none';
+            resultSection.style.display = 'block';
         });
     });
 }); 
