@@ -12,6 +12,18 @@ const voteSection = document.getElementById('vote-section');
 const resultSection = document.getElementById('result-section');
 const voteButtons = document.querySelectorAll('.vote-btn');
 const voteCounts = document.querySelectorAll('.vote-count');
+const backToVoteBtn = document.getElementById('back-to-vote');
+
+// 画面遷移関数
+function showVoteSection() {
+    voteSection.style.display = 'block';
+    resultSection.style.display = 'none';
+}
+
+function showResultSection() {
+    voteSection.style.display = 'none';
+    resultSection.style.display = 'block';
+}
 
 // グラフの初期化
 const ctx = document.getElementById('voteChart').getContext('2d');
@@ -92,8 +104,10 @@ voteButtons.forEach((button) => {
             return (count || 0) + 1;
         }).then(() => {
             // 投票後に結果画面に遷移
-            voteSection.style.display = 'none';
-            resultSection.style.display = 'block';
+            showResultSection();
         });
     });
-}); 
+});
+
+// 戻るボタンの処理
+backToVoteBtn.addEventListener('click', showVoteSection); 
