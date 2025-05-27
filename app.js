@@ -30,19 +30,21 @@ const ctx = document.getElementById('voteChart').getContext('2d');
 const voteChart = new Chart(ctx, {
     type: 'bar',
     data: {
-        labels: ['選択肢1', '選択肢2', '選択肢3'],
+        labels: ['赤組', '青組', '黄組', '緑組'],
         datasets: [{
             label: '投票数',
-            data: [0, 0, 0],
+            data: [0, 0, 0, 0],
             backgroundColor: [
-                'rgba(54, 162, 235, 0.8)',
-                'rgba(255, 99, 132, 0.8)',
-                'rgba(75, 192, 192, 0.8)'
+                'rgba(255, 99, 132, 0.8)',  // 赤
+                'rgba(54, 162, 235, 0.8)',  // 青
+                'rgba(255, 206, 86, 0.8)',  // 黄
+                'rgba(75, 192, 192, 0.8)'   // 緑
             ],
             borderColor: [
-                'rgba(54, 162, 235, 1)',
-                'rgba(255, 99, 132, 1)',
-                'rgba(75, 192, 192, 1)'
+                'rgba(255, 99, 132, 1)',    // 赤
+                'rgba(54, 162, 235, 1)',    // 青
+                'rgba(255, 206, 86, 1)',    // 黄
+                'rgba(75, 192, 192, 1)'     // 緑
             ],
             borderWidth: 1
         }]
@@ -75,7 +77,7 @@ function loadVotes() {
     const votesRef = firebase.database().ref('votes');
     votesRef.on('value', (snapshot) => {
         const data = snapshot.val() || {};
-        const voteData = [0, 0, 0];
+        const voteData = [0, 0, 0, 0];
         
         voteCounts.forEach((count, index) => {
             const optionNumber = index + 1;
